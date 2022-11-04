@@ -1,0 +1,24 @@
+# permissions for end users to edit deprecateds.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: deprecated-editor-role
+rules:
+- apiGroups:
+  - operators.io.operator-framework
+  resources:
+  - deprecateds
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - operators.io.operator-framework
+  resources:
+  - deprecateds/status
+  verbs:
+  - get

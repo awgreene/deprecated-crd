@@ -1,0 +1,6 @@
+apiVersion: operators.io.operator-framework/v1
+kind: Deprecated
+metadata:
+  name: deprecated-sample
+spec:
+  # TODO(user): Add fields here

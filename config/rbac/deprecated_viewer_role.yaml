@@ -1,0 +1,20 @@
+# permissions for end users to view deprecateds.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: deprecated-viewer-role
+rules:
+- apiGroups:
+  - operators.io.operator-framework
+  resources:
+  - deprecateds
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - operators.io.operator-framework
+  resources:
+  - deprecateds/status
+  verbs:
+  - get
